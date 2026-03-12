@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>number guessing game</title>
+        <style>
+              body{
+        background-color:black;
+        color: white;
+        font-family: Arial;
+        text-align: center;
+        margin-top: 150px;
+    }
+    input{
+        background-color: black;
+        color: white;
+        border: none;
+        border-bottom: 2px solid skyblue;
+        font-size: 18px;
+        padding: 8px;
+    }
+    button{
+        background-color: aqua;
+        border: none;
+        padding: 10px 20px;
+        font-size: 15px;
+        border-radius: 5px;
+
+    }
+    #result{
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+        </style>
+    </head>
+  
+    <body>
+        <h1>number guessing game</h1>
+        <p>guess the number between 1 to 100</p>
+        <input type = "number" id="guess"><br><br>
+        <button onclick="checkguess()">guess</button>
+        <p id="result"></p>
+        <script>
+            let set = Math.floor(Math.random()*100)+1;
+            console.log(set)
+            function checkguess(){
+                let guess = document.getElementById("guess").value;
+                if(guess == set){
+                    document.getElementById("result").innerText="correct!";
+                    set = Math.floor(Math.random()*100)+1;
+                    console.log(set)
+                }
+                else if(guess < set){
+                    document.getElementById("result").innerText="too low!";
+
+                }
+                else{
+                    document.getElementById("result").innerText="too high!";
+                }
+            }
+        </script>
+
+    </body>
+</html>
